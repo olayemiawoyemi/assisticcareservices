@@ -39,6 +39,7 @@ body {
   color: var(--color-text-dark);
   line-height: 1.6;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 a {
@@ -749,6 +750,52 @@ h1, h2, h3, h4 {
 .form-group textarea {
   height: 150px;
   resize: vertical;
+}
+
+/* --- CONTACT INFO SIDEBAR --- */
+.contact-info-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-bg-light);
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px dashed var(--color-border);
+  min-width: 0; /* Prevent overflow in grid */
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+    overflow-x: hidden;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-info-sidebar {
+    padding: 28px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 576px) {
